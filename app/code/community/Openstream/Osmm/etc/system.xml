@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <reports>
+            <groups>
+                <osmm translate="label">
+                    <label>Social Media Monitoring</label>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <keep_timeline translate="label comment">
+                            <label>Keep Timeline For</label>
+                            <frontend_type>select</frontend_type>
+                            <frontend_model>osmm/system_config_form_field_keepTimelineDays</frontend_model>
+                            <sort_order>1</sort_order>
+                            <comment>Number of days after which timeline will be archived</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </keep_timeline>
+                        <stats_for_disabled_campaigns translate="label comment">
+                            <label>Show Disabled Campaigns</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <comment>Display dashboard stats for disabled campaigns</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </stats_for_disabled_campaigns>
+                        <alchemy_api_key translate="label comment">
+                            <label>Alchemy API Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <comment><![CDATA[Without Alchemy API key language recognition for FaceBook posts will not work. <a href="http://www.alchemyapi.com/api/register.html" target="_blank">Get Alchemy API key</a>]]></comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </alchemy_api_key>
+                    </fields>
+                </osmm>
+            </groups>
+        </reports>
+    </sections>
+</config>

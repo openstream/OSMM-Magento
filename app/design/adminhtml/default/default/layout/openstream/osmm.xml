@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<layout>
+
+    <adminhtml_dashboard_index>
+		<reference name="head">
+			<action method="addItem"><type>skin_js</type><name>openstream/osmm/js/jquery-1.4.2.min.js</name><params/><if/></action>
+			<action method="addItem"><type>skin_js</type><name>openstream/osmm/js/highstock.js</name><params/><if/></action>
+			<action method="addItem"><type>skin_js</type><name>openstream/osmm/js/modules/exporting.js</name><params/><if/></action>
+			<action method="addItem"><type>skin_js</type><name>openstream/osmm/js/jquery.jcarousel.min.js</name><params/><if/></action>
+			<action method="addItem"><type>skin_css</type><name>openstream/osmm/css/style.css</name><params/><if/></action>
+		</reference>
+	</adminhtml_dashboard_index>
+
+    <adminhtml_campaign_index>
+        <reference name="content">
+            <block type="osmm/adminhtml_campaign" name="campaign"/>
+        </reference>
+    </adminhtml_campaign_index>
+
+    <adminhtml_campaign_grid>
+        <block type="osmm/adminhtml_campaign_grid" name="campaign_grid" output="toHtml"/>
+    </adminhtml_campaign_grid>
+
+    <adminhtml_campaign_edit>
+        <reference name="content">
+            <block type="osmm/adminhtml_campaign_edit" name="campaign_edit"/>
+        </reference>
+        <reference name="left">
+            <block type="osmm/adminhtml_campaign_edit_tabs" name="campaign_edit_tabs"/>
+        </reference>
+    </adminhtml_campaign_edit>
+
+    <adminhtml_keyword_index>
+        <reference name="content">
+            <block type="osmm/adminhtml_keyword" name="keyword"/>
+        </reference>
+    </adminhtml_keyword_index>
+
+    <adminhtml_keyword_grid>
+        <block type="osmm/adminhtml_keyword_grid" name="keyword_grid" output="toHtml"/>
+    </adminhtml_keyword_grid>
+
+    <adminhtml_keyword_edit>
+        <reference name="content">
+            <block type="osmm/adminhtml_keyword_edit" name="keyword_edit"/>
+        </reference>
+    </adminhtml_keyword_edit>
+
+</layout>

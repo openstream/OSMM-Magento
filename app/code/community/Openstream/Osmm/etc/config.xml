@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Openstream_Osmm>
+            <version>0.0.1</version>
+        </Openstream_Osmm>
+    </modules>
+	<global>
+
+		<models>
+            <osmm>
+                <class>Openstream_Osmm_Model</class>
+                <resourceModel>osmm_resource</resourceModel>
+            </osmm>
+			<osmm_resource>
+				<class>Openstream_Osmm_Model_Resource</class>
+				<entities>
+					<project>
+						<table>osmm_project</table>
+					</project>
+					<projecttoquery>
+						<table>osmm_project_to_query</table>
+					</projecttoquery>
+					<query>
+						<table>osmm_query</table>
+					</query>
+					<search>
+						<table>osmm_search</table>
+					</search>
+					<searchindex>
+						<table>osmm_search_index</table>
+					</searchindex>
+					<searchinfluencers>
+						<table>osmm_search_influencers</table>
+					</searchinfluencers>
+				</entities>
+			</osmm_resource>
+		</models>
+
+		<blocks>
+			<adminhtml>
+				<rewrite>
+					<dashboard_diagrams>Openstream_Osmm_Block_Dashboard_Diagrams</dashboard_diagrams>
+				</rewrite>
+			</adminhtml>
+			<osmm>
+				<class>Openstream_Osmm_Block</class>
+			</osmm>
+		</blocks>
+
+        <resources>
+            <osmm_setup>
+                <setup>
+                    <module>Openstream_Osmm</module>
+                </setup>
+            </osmm_setup>
+        </resources>
+
+		<helpers>
+			<osmm>
+				<class>Openstream_Osmm_Helper</class>
+			</osmm>
+		</helpers>
+
+	</global>
+
+	<admin>
+        <routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<osmm before="Mage_Adminhtml">Openstream_Osmm_Adminhtml</osmm>
+					</modules>
+				</args>
+			</adminhtml>
+        </routers>
+    </admin>
+
+	<adminhtml>
+		<layout>
+			<updates>
+				<osmm>
+					<file>openstream/osmm.xml</file>
+				</osmm>
+			</updates>
+		</layout>
+	</adminhtml>
+
+    <default>
+        <reports>
+            <osmm>
+                <keep_timeline>3</keep_timeline>
+                <stats_for_disabled_campaigns>0</stats_for_disabled_campaigns>
+            </osmm>
+        </reports>
+    </default>
+
+    <crontab>
+        <jobs>
+            <xmlconnect_notification_send_all>
+                <schedule><cron_expr>01 * * * *</cron_expr></schedule>
+                <run><model>osmm/cron::run</model></run>
+            </xmlconnect_notification_send_all>
+        </jobs>
+    </crontab>
+</config>

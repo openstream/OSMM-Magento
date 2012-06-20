@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <report>
+            <children>
+                <osmm translate="title" module="osmm">
+                    <title>Social Media Monitoring</title>
+                    <sort_order>70000</sort_order>
+                    <children>
+                        <osmm_campaign>
+                            <title>Campaigns</title>
+                            <action>adminhtml/campaign</action>
+                        </osmm_campaign>
+                        <osmm_keyword>
+                            <title>Keywords</title>
+                            <action>adminhtml/keyword</action>
+                        </osmm_keyword>
+                    </children>
+                </osmm>
+            </children>
+        </report>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <report>
+                        <children>
+                            <osmm translate="title">
+                                <title>Social Media Monitoring</title>
+                                <sort_order>70000</sort_order>
+                                <children>
+                                    <osmm_campaign>
+                                        <title>Campaigns</title>
+                                    </osmm_campaign>
+                                    <osmm_keyword>
+                                        <title>Keywords</title>
+                                    </osmm_keyword>
+                                </children>
+                            </osmm>
+                        </children>
+                    </report>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
