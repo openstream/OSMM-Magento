@@ -3,18 +3,21 @@
 
 .clear{ clear:both; }
 
-.results-container {  font-size:11px; padding: 7px 0px; }
-.results-container img { height:48px; width:48px; margin:0px 7px; }
-.results-container .date { color:#bbbbbb; font-size:10px; }
+.results-container { padding: 7px 0; }
+.results-container img { height:48px; width:48px; margin:0 7px; }
+.results-container .date { color:#bbbbbb; margin: 0 0 6px 0; }
+.results-container a { color: #2f2f2f }
+.results-container a:hover { text-decoration: none }
+.results-container .username a { font-weight: bold; text-decoration: none }
 .results-container.facebook { background-color:#2e4576; border-bottom-color:#2e4576; color:#ffffff; }
 .results-container .msg-text { width:498px; }
 
 /* -- carousel --*/
-.jcarousel-skin-tango .jcarousel-container-vertical { width: 573px; height: 630px; padding: 40px 0px; }
+.jcarousel-skin-tango .jcarousel-container-vertical { width: 573px; height: 630px; padding: 40px 0; }
 .jcarousel-skin-tango .jcarousel-clip { overflow: hidden; border-top:#d6d6d6 solid 1px; }
 .jcarousel-skin-tango .jcarousel-clip-vertical { width:573px; height: 630px; }
 .jcarousel-skin-tango .jcarousel-item { width:573px; height: 62px; overflow:hidden; }
-.jcarousel-skin-tango .jcarousel-item-vertical { border-bottom:#d6d6d6 solid 1px; margin:0px; padding:0px; }
+.jcarousel-skin-tango .jcarousel-item-vertical { border-bottom:#d6d6d6 solid 1px; margin:0; padding:0; }
 .jcarousel-skin-tango .jcarousel-item-placeholder { background: #FFFFFF; }
 .jcarousel-skin-tango .jcarousel-next-vertical { position: absolute; bottom: 5px; left: 270px; width: 32px; height: 32px; cursor: pointer; background: transparent url(../images/next-vertical.png) no-repeat 0 0; }
 .jcarousel-skin-tango .jcarousel-next-vertical:hover, .jcarousel-skin-tango .jcarousel-next-vertical:focus { background-position: 0 -32px; }

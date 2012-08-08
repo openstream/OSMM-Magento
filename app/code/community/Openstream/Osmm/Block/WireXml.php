@@ -49,8 +49,11 @@ class Openstream_Osmm_Block_WireXml extends Mage_Core_Block_Template
 			   </a>
 			  </div>
 			  <div class="left msg-text">
-			   <strong>'.stripslashes($_result->getData('search_author_name')).'</strong>
-			   <div class="date">'.date('F jS, Y H:i', $_result->getData('search_published')).'</div>'.$_result->getDecoratedContent().'</div>
+			   <div class="left username"><a href="'.$_result->getUrl().'" target="_blank" title="'.stripslashes($_result->getData('search_author_name')).'" onclick="blur();">'.stripslashes($_result->getData('search_author_name')).'</a></div>
+			   <div class="right date">'.date('F jS, Y H:i', $_result->getData('search_published')).'</div>
+			   <div class="clear"></div>
+			   '.$_result->getDecoratedContent().'
+			  </div>
 			  <div class="clear">
 			 </div>';
         }
