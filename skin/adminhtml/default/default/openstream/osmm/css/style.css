@@ -10,6 +10,7 @@
 .results-container a:hover { text-decoration: none }
 .results-container .username a { font-weight: bold; text-decoration: none }
 .results-container.facebook { background-color:#2e4576; border-bottom-color:#2e4576; color:#ffffff; }
+.results-container.facebook a { color:#ffffff; }
 .results-container .msg-text { width:498px; }
 
 .top-influencers a { color: #2f2f2f; text-decoration: none; }
