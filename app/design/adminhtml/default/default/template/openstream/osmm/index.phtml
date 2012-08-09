@@ -16,7 +16,7 @@
         <?php foreach ($projects as $_value=>$_label): ?>
             <option value="<?php echo $_value ?>" <?php if($this->getRequest()->getParam('project_id')==$_value): ?> selected="selected"<?php endif; ?>><?php echo $_label ?></option>
         <?php endforeach; ?>
-    </select></p><br/>
+    </select> or <a href="<?php echo $this->getUrl('*/campaign') ?>"><?php echo $this->__('manage campaigns') ?></a></p><br/>
     <p style="width:587px; margin:0 auto;"></p>
 
 	<div class="osmm-dashboard-wrapper">
