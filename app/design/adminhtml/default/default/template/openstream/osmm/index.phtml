@@ -31,7 +31,7 @@
 			
 			<div class="entry-edit-head"><h4>Top Influencers</h4></div>
 			<fieldset class="np">
-				<div class="grid np">
+				<div class="grid np top-influencers">
 					<table cellspacing="0" style="border:0;">
 						<thead>
 							<tr class="headings">
@@ -44,8 +44,8 @@
                             <?php /** @var $collection Openstream_Osmm_Model_Resource_Searchinfluencers_Collection */ ?>
                             <?php foreach($collection as $_influencer) : ?>
                                 <?php /** @var $_influencer Openstream_Osmm_Model_Searchinfluencers */ ?>
-							<tr title="<?php echo $_influencer->getData('search_author_uri') ?>" class="pointer">
-								<td><?php echo $_influencer->getData('search_author_name') ?></td>
+							<tr>
+								<td><a href="<?php echo $_influencer->getUrl() ?>" target="_blank"><?php echo $_influencer->getData('search_author_name') ?></a></td>
 								<td class="a-right last"><?php echo $_influencer->getData('cnt') ?></td>
 							</tr>
 							<?php endforeach ?>

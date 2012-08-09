@@ -12,6 +12,9 @@
 .results-container.facebook { background-color:#2e4576; border-bottom-color:#2e4576; color:#ffffff; }
 .results-container .msg-text { width:498px; }
 
+.top-influencers a { color: #2f2f2f; text-decoration: none; }
+.top-influencers a:hover { text-decoration: underline }
+
 /* -- carousel --*/
 .jcarousel-skin-tango .jcarousel-container-vertical { width: 573px; height: 630px; padding: 40px 0; }
 .jcarousel-skin-tango .jcarousel-clip { overflow: hidden; border-top:#d6d6d6 solid 1px; }
