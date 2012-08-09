@@ -18,13 +18,13 @@ class Openstream_Osmm_Model_Search extends Mage_Core_Model_Abstract
             }
             $_occurrences = array();
         }
-        if ($this->getData('search_source') == 'twitter' && preg_match_all('|@[a-z0-9_]{1,15}|ism', $text, $_occurrences)) {
+        if ($this->getData('search_source') == 'twitter' && preg_match_all('/@[a-z0-9_]{1,15}/ism', $text, $_occurrences)) {
             foreach ($_occurrences[0] as $_occurrence) {
                 $text = preg_replace('|'.$_occurrence.'|ism', '<a href="https://twitter.com/'.substr($_occurrence, 1).'" target="_blank">'.$_occurrence.'</a>', $text);
             }
             $_occurrences = array();
         }
-        if ($this->getData('search_source') == 'twitter' && preg_match_all('|#[a-z0-9]+|ism', $text, $_occurrences)) {
+        if ($this->getData('search_source') == 'twitter' && preg_match_all('/(^|\s)#[a-zA-Z0-9äáé?íóö?úü?ÄÁÉÍÓÖ?ÚÜ?_]+/ism', $text, $_occurrences)) {
             foreach ($_occurrences[0] as $_occurrence) {
                 $text = preg_replace('|'.$_occurrence.'|ism', '<a href="https://twitter.com/search/'.$_occurrence.'" target="_blank">'.$_occurrence.'</a>', $text);
             }

@@ -27,8 +27,8 @@
                             <sort_order>2</sort_order>
                             <comment>Display dashboard stats for disabled campaigns</comment>
                             <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
                         </stats_for_disabled_campaigns>
                         <alchemy_api_key translate="label comment">
                             <label>Alchemy API Key</label>
@@ -39,6 +39,16 @@
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
                         </alchemy_api_key>
+                        <convert_non_ascii_characters translate="label comment">
+                            <label>Convert Non-ASCII Characters</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>4</sort_order>
+                            <comment>Preserves non-latin characters display with some databases (e.g. MySQL before 5.5.3)</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </convert_non_ascii_characters>
                     </fields>
                 </osmm>
             </groups>

@@ -91,6 +91,7 @@
             <osmm>
                 <keep_timeline>3</keep_timeline>
                 <stats_for_disabled_campaigns>0</stats_for_disabled_campaigns>
+                <convert_non_ascii_characters>0</convert_non_ascii_characters>
             </osmm>
         </reports>
     </default>

@@ -6,6 +6,9 @@ class Openstream_Osmm_Model_Cron
     {
         ini_set('user_agent', 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; en-us) AppleWebKit/533.21.1 (KHTML, like Gecko) Version/5.0.5 Safari/533.21.1');
 
+        /** @var $helper Openstream_Osmm_Helper_Data */
+        $helper = Mage::helper('osmm');
+
         /** @var $resource Mage_Core_Model_Resource */
         $resource = Mage::getSingleton('core/resource');
         $active_keywords = array();
@@ -49,7 +52,7 @@ class Openstream_Osmm_Model_Cron
                     'search_outer_id' => $entry->id_str,
                     'search_source' => 'twitter',
                     'search_published' => strtotime($entry->created_at),
-                    'search_content' => $entry->text,
+                    'search_content' => $helper->utf8tohtml($entry->text, true),
                     'search_author_name' => $entry->from_user,
                     'search_author_image' => $entry->profile_image_url
                 );
