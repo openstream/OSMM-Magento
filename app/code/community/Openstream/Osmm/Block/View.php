@@ -1,6 +1,6 @@
 <?php
 
-class Openstream_Osmm_Block_View extends Mage_Core_Block_Template
+class Openstream_Osmm_Block_View extends Mage_Adminhtml_Block_Template
 {
 	public  $_currentProjectId;
     private $_queryTable,
@@ -14,7 +14,9 @@ class Openstream_Osmm_Block_View extends Mage_Core_Block_Template
 			$this->_currentProjectId = $this->getRequest()->getParam('project_id');		
 		}elseif(!$this->_currentProjectId){
 			$projects = array_keys($this->getProjects());
-            $this->_currentProjectId = $projects[0];
+            if (count($projects)) {
+                $this->_currentProjectId = $projects[0];
+            }
 		}
 
         /** @var $core_resource Mage_Core_Model_Resource */

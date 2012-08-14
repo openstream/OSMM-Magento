@@ -4,15 +4,14 @@ $this->startSetup();
 
 $table = $this->getConnection()->newTable($this->getTable('osmm/project'))
 							   ->addColumn('project_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array('identity' => true, 'primary' => true, 'unsigned'  => true, 'nullable' => false))
-							   ->addColumn('project_name', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array('nullable' => false));
-$this->getConnection()->createTable($table)
+							   ->addColumn('project_name', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array('nullable' => false))
 							   ->addColumn('project_status', Varien_Db_Ddl_Table::TYPE_TINYINT, 1, array('nullable' => false, 'default' => 1, 'unsigned' => true));
 $this->getConnection()->createTable($table);
 
-$table = $this->getConnection()->newTable($this->getTable('osmm/project_to_query'))
+$table = $this->getConnection()->newTable($this->getTable('osmm/projecttoquery'))
 							   ->addColumn('project_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array('unsigned'  => true, 'nullable' => false))
 							   ->addColumn('query_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array('unsigned'  => true, 'nullable' => false))
-							   ->addIndex($this->getIdxName('osmm/project_to_query', array('project_id', 'query_id')), array('project_id', 'query_id'));
+							   ->addIndex($this->getIdxName('osmm/projecttoquery', array('project_id', 'query_id')), array('project_id', 'query_id'));
 $this->getConnection()->createTable($table);
 
 $table = $this->getConnection()->newTable($this->getTable('osmm/query'))
@@ -36,21 +35,21 @@ $table = $this->getConnection()->newTable($this->getTable('osmm/search'))
 							   ->addColumn('search_author_image', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array('nullable' => false));
 $this->getConnection()->createTable($table);
 
-$table = $this->getConnection()->newTable($this->getTable('osmm/search_index'))
+$table = $this->getConnection()->newTable($this->getTable('osmm/searchindex'))
 							   ->addColumn('query_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array('unsigned'  => true, 'nullable' => false))
 							   ->addColumn('index_date', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array('unsigned'  => true, 'nullable' => false))
 							   ->addColumn('index_source', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array('nullable' => false))
 							   ->addColumn('index_count', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array('unsigned'  => true, 'nullable' => false))
-							   ->addIndex($this->getIdxName('osmm/search_index', array('query_id', 'index_date', 'index_source')), array('query_id', 'index_date', 'index_source'));
+							   ->addIndex($this->getIdxName('osmm/searchindex', array('query_id', 'index_date', 'index_source')), array('query_id', 'index_date', 'index_source'));
 $this->getConnection()->createTable($table);
 
-$table = $this->getConnection()->newTable($this->getTable('osmm/search_influencers'))
+$table = $this->getConnection()->newTable($this->getTable('osmm/searchinfluencers'))
 							   ->addColumn('query_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array('unsigned'  => true, 'nullable' => false))
 							   ->addColumn('search_author_name', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array('nullable' => false))
 							   ->addColumn('search_author_uri', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array('nullable' => false))
 							   ->addColumn('cnt', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array('unsigned'  => true, 'nullable' => false))
                                ->addColumn('search_source', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array('unsigned'  => true, 'nullable' => false))
-                               ->addIndex($this->getIdxName('osmm/search_influencers', array('query_id', 'search_author_name', 'search_source')), array('query_id', 'search_author_name', 'search_source'));
+                               ->addIndex($this->getIdxName('osmm/searchinfluencers', array('query_id', 'search_author_name', 'search_source')), array('query_id', 'search_author_name', 'search_source'));
 $this->getConnection()->createTable($table);
 
 $this->endSetup();
